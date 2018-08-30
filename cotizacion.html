@@ -1,6 +1,6 @@
 <!-- DOCTYPE -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
@@ -16,7 +16,8 @@
   <!-- Responsive Style -->
   <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
   <!--Fonts-->
-  <link rel="stylesheet" media="screen" href="assets/fonts/font-awesome/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
   <link rel="stylesheet" media="screen" href="assets/fonts/simple-line-icons.css">
 
   <!-- Extras -->
@@ -39,7 +40,7 @@
     crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
     crossorigin=""></script>
-
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
@@ -61,46 +62,55 @@
             ☰
           </button>
           <!-- Brand -->
-          <a class="navbar-brand" href="index.html">
-            <img src="assets/img/logo.jpg" alt="seguriaxion ltda" style="height: 55px;">
+
+          <a class="navbar-brand" href="/">
+            <div class="row">
+              <div class="col-xs-3">
+                <img src="assets/img/seguriaxion_ico.png" alt="seguriaxion ltda" style="height: 55px;">
+              </div>
+              <div class="col-xs-1">
+              </div>
+              <div class="col-xs-3">
+                <img src="assets/img/seguriaxion_letters.png" alt="seguriaxion ltda" style="height: 55px;">
+              </div>
+            </div>
+
           </a>
           <div class="collapse navbar-toggleable-sm pull-xs-left pull-md-right" id="main-menu">
             <!-- Navbar Starts -->
             <ul class="nav nav-inline">
 
               <li class="nav-item dropdown">
-                <a class="nav-link" href="index.html" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="/" role="button" aria-haspopup="true" aria-expanded="false">
                   Inicio
                   <!-- das -->
                 </a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link" href="servicios.html" role="button" aria-haspopup="true" aria-expanded="false">
-                  Servicios
-                  <!-- das -->
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="quienes_somos.html" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="index.html#description-main-1" role="button" aria-haspopup="true" aria-expanded="false">
                   Quienes Somos
                   <!-- das -->
                 </a>
 
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="index.html#other-services" role="button" aria-haspopup="true" aria-expanded="false">
+                  Servicios
+                  <!-- das -->
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="contacto" role="button" aria-haspopup="true" aria-expanded="false">
                   Contacto
                   <!-- das -->
                 </a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="contacto.html">Contacto</a>
-                  <!-- das -->
-                  <a class="dropdown-item" href="trabajaaca.html">Trabaja con nosotros</a>
-                  <!-- das -->
+                  <a class="dropdown-item" href="contacto">Contacto</a> <!-- das -->
+                  <a class="dropdown-item" href="trabaja">Trabaja con nosotros</a><!-- das -->
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="cotizacion.html" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="cotizacion" role="button" aria-haspopup="true" aria-expanded="false">
                   Cotización
                   <!-- das -->
                 </a>
@@ -120,63 +130,64 @@
   <section id="main-image-section" class="section">
     <div class="container">
       <div class="row">
-        <h1>lorem ipsisos sni sid kspod dssdsdsdd</h1>
+        <div id="form-messages-cotiz"></div>
       </div>
-      <p><br>LOREMS SAIASOASKO DSOKO<br><br></p>
-      <form>
+      <div class="row">
+        <h1>Cotiza por uno de los servicios que ofrecemos llenando el siguiente formulario:</h1>
+      </div>
+      <p><br>Seguridad, administracion o servicios de aseo.<br><br></p>
+      <form id="ajax-contact-cotiz" method="post" action="assets/php/mail_cotiza.php">
         <div class="row">
           <div class="col-md-6">
-              <div class="form-group">
-                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre y Apellido"
-                    required>
-                </div>
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Afiliacion" required>
-                </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-              <div class="form-group">
-                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Dirección" required>
-                </div>
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Comuna" required>
-                </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-              <div class="form-group">
-                  <input type="tel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Telefono (+569 99999999)"
-                    pattern="+569[0-9]{8}" required>
-                </div>
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
-                </div>
-          </div>
-        </div>
-        <div class="row">
             <div class="form-group">
-                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Comentarios" required></textarea>
-              </div>
+              <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Nombre y Apellido"
+                required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="afiliacion" name="afiliacion" aria-describedby="emailHelp" placeholder="Afiliacion"
+                required>
+            </div>
+          </div>
         </div>
-        
-        
-        
-        
-        
-        
-        
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="direccion" name="direccion" aria-describedby="emailHelp" placeholder="Dirección"
+                required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="comuna" name="comuna" aria-describedby="emailHelp" placeholder="Comuna" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="tel" class="form-control" id="telefono" name="telefono" aria-describedby="emailHelp" placeholder="Telefono (+569 99999999)"
+                pattern="+569[0-9]{8}" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Comentarios" required></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="g-recaptcha" data-sitekey="6Lcvq2wUAAAAACYgH-CAWfryGO6qJvSus2ah5lbo"></div>
         <button type="submit" class="btn btn-primary">Enviar</button>
       </form>
-      
+
   </section>
   <section id="section-map" style="padding-bottom: 64px; background: #f8f8f8">
     <div class="container">
@@ -206,10 +217,9 @@
           <h3 class="small-title">
             SEGURIAXION
           </h3>
-          <img src="assets/img/logo.jpg" style="width: 100px"></img>
+          <a href="/"><img src="assets/img/seguriaxion_entero_fill.png" alt="seguriaxion" style="width: 150px"></a>
 
-        </div>
-        <!-- Footer Widget Ends -->
+        </div><!-- Footer Widget Ends -->
 
         <!-- Footer Widget Starts -->
         <div class="footer-widget col-md-4 col-xs-12 wow fadeIn" data-wow-delay=".2s">
@@ -217,11 +227,10 @@
             DIRECCIÓN
           </h3>
           <p>
-            Dirección comercial:
-            <br> Gran Avenida José Miguel Carrera N°5018 Oficina 509, San Miguel
+            <i class="far fa-building"></i> Dirección comercial: <br> Gran Avenida José Miguel Carrera N°5018 Oficina 509,
+            San Miguel
           </p>
-        </div>
-        <!-- Footer Widget Ends -->
+        </div><!-- Footer Widget Ends -->
 
         <!-- Footer Widget Starts -->
         <div class="footer-widget col-md-4 col-xs-12 wow fadeIn" data-wow-delay=".2s">
@@ -229,17 +238,13 @@
             CONTACTO
           </h3>
           <p>
-            +5694883739
-            <br> contacto@seguriaxion.cl
+            <i class="fas fa-phone"></i> (+56) 9 4883739 <br> <i class="far fa-envelope"></i> contacto@seguriaxion.cl
           </p>
-        </div>
-        <!-- Footer Widget Ends -->
+        </div><!-- Footer Widget Ends -->
 
 
-      </div>
-      <!-- Row Ends -->
-    </div>
-    <!-- Container Ends -->
+      </div><!-- Row Ends -->
+    </div><!-- Container Ends -->
 
     <!-- Copyright -->
     <div id="copyright">
