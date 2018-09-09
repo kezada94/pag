@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensaje = trim($_POST["mensaje"]);
 
         // Set the recipient email address.
-    $recipient = "kezada66@gmail.com";
+        $recipient = "contacto@seguriaxion.cl";
 
         // Set the email subject.
     $subject = "$afiliacion solicita una cotizacion";
